@@ -1,2 +1,2 @@
-mod connection_pool;
+pub mod ConnectionPool;
 
