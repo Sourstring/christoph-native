@@ -17,8 +17,10 @@ static TRANSFER_CANCEL_MAP: Lazy<Mutex<HashMap<String, Arc<AtomicBool>>>> =
     Lazy::new(|| Mutex::new(HashMap::new()));
 
 pub struct SftpClient {
+    #[allow(dead_code)]
     session: Session,
     sftp: Sftp,
+    #[allow(dead_code)]
     config: ConnectionConfig,
     connection_id: String,
 }

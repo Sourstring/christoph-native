@@ -1,4 +1,3 @@
-// connection_pool.rs
 use std::collections::HashMap;
 use std::sync::{Arc, Mutex};
 use once_cell::sync::Lazy;
@@ -7,6 +6,12 @@ use crate::sftp::SftpClient;
 
 pub struct ConnectionPool {
     connections: Mutex<HashMap<String, Arc<Mutex<SftpClient>>>>,
+}
+
+impl Default for ConnectionPool {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl ConnectionPool {
@@ -29,10 +34,6 @@ impl ConnectionPool {
     pub fn remove(&self, id: &str) -> Option<Arc<Mutex<SftpClient>>> {
         self.connections.lock().unwrap().remove(id)
     }
-
-    pub fn list_connections(&self) -> Vec<String> {
-        self.connections.lock().unwrap().keys().cloned().collect()
-    }
 }
 
-pub static CONNECTION_POOL: Lazy<ConnectionPool> = Lazy::new(|| ConnectionPool::new());
+pub static CONNECTION_POOL: Lazy<ConnectionPool> = Lazy::new(ConnectionPool::new);

@@ -1,6 +1,6 @@
 use tauri::Window;
 
-use crate::state::ConnectionPool::CONNECTION_POOL;
+use crate::state::connection_pool::CONNECTION_POOL;
 use crate::sftp::{cancel_transfer, start_download, start_upload};
 
 #[tauri::command]

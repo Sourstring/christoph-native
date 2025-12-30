@@ -1,4 +1,4 @@
-use crate::{sftp::{ConnectionConfig, SftpClient}, state::ConnectionPool::{CONNECTION_POOL}};
+use crate::{sftp::{ConnectionConfig, SftpClient}, state::connection_pool::{CONNECTION_POOL}};
 
 
 #[tauri::command]

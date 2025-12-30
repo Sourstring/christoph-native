@@ -19,9 +19,3 @@ pub struct FileInfo {
     pub modified: u64,
     pub permissions: String
 }
-
-#[derive(Serialize, Clone)]
-pub struct DirectoryListing {
-    pub path: String,
-    pub files: Vec<FileInfo>,
-}

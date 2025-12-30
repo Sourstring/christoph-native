@@ -1,4 +1,4 @@
-use crate::state::ConnectionPool::ConnectionPool;
+use crate::state::connection_pool::ConnectionPool;
 
 mod commands;
 mod sftp;

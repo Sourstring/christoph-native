@@ -1,13 +1,3 @@
-use std::path::Path;
-
-pub fn get_parent_path(path: &str) -> String {
-    Path::new(path)
-        .parent()
-        .unwrap_or(Path::new("/"))
-        .to_string_lossy()
-        .replace("\\", "/")
-}
-
 pub fn format_permissions(mode: u32) -> String {
     let mut perms = String::new();
 
