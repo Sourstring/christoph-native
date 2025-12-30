@@ -1,7 +1,25 @@
-# Tauri + React + Typescript
+## Architecture Plan
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
+### Phase 1: Core SFTP (Rust)
+- [ x ] Set up ssh2 crate
+- [ x ] Create connection function
+- [ x ] Test connecting to a real SFTP server
+- [ x ] Implement list directory
+- [ x ] Implement download file
 
-## Recommended IDE Setup
+### Phase 2: Tauri Commands (Bridge)
+- [ x ] Wrap SFTP functions as Tauri commands
+- [ x ] Handle errors properly
+- [ x ] Test from Tauri's dev tools
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+### Phase 3: Basic Frontend (React)
+- [ ] Connection form (host, username, password)
+- [ ] "Connect" button that calls your Tauri command
+- [ ] Display list of files
+- [ ] Show errors if connection fails
+
+### Phase 4: Polish
+- [ ] File tree UI
+- [ ] Upload/download buttons
+- [ ] Progress indicators
+- [ ] Save connections
