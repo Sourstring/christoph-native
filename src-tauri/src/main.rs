@@ -6,6 +6,7 @@ mod state;
 
 fn main() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_dialog::init())
         .manage(ConnectionPool::new()) // Shared state
         .invoke_handler(tauri::generate_handler![
             // Connection commands
@@ -17,7 +18,7 @@ fn main() {
             commands::operations::download_file,
             commands::operations::cancel_file_transfer,
             commands::operations::delete_file,
-            commands::operations::create_directory, 
+            commands::operations::create_directory,
             commands::operations::rename_file,
         ])
         .run(tauri::generate_context!())
